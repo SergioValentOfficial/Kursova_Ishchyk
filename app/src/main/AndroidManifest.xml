@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EnglisGame"
         tools:targetApi="31">
+
+        <activity android:name=".ui.mainGameplay.MainGameplay"/>
+
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -19,9 +24,19 @@
             android:theme="@style/Theme.EnglisGame.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- ОНОВЛЕНА ТЕМА ДЛЯ MainMenu -->
+        <activity
+            android:name=".ui.mainMenu.MainMenu"
+            android:exported="true"
+            android:theme="@style/Theme.EnglisGame.NoActionBar">
+        </activity>
+        <activity android:name=".ui.mainGameplay.mainMulti"
+            android:exported="true"
+            android:theme="@style/Theme.EnglisGame">
         </activity>
     </application>
 
