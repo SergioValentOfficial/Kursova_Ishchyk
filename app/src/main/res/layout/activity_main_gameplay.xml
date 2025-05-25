@@ -61,13 +61,14 @@
         android:id="@+id/editTextGameplay"
         android:layout_width="218dp"
         android:layout_height="48dp"
+        android:cursorVisible="true"
+        android:hint="Введіть перше слово "
         android:inputType="text"
         android:textStyle="bold"
-        android:cursorVisible="true"
-        app:layout_constraintTop_toTopOf="@id/startGameButton"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228" />
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/startGameButton" />
 
     <!-- ───────── Нікнейм гравця ───────── -->
     <TextView
@@ -143,12 +144,12 @@
         android:id="@+id/healthText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="health"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="кількість життів"
         app:layout_constraintBottom_toTopOf="@id/textTimer"
-        app:layout_constraintStart_toEndOf="@id/currentLetter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toEndOf="@id/currentLetter"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.939" />
 
     <!-- ───────── Контейнер кастомної клавіатури ───────── -->

@@ -1,4 +1,4 @@
-package com.example.englisgame.ui.mainGameplay   // ← такий самий пакет, як у MainGameplay
+package com.example.englisgame.ui.mainGameplay
 
 import android.content.Context
 import com.example.englishgame.database.DatabaseHelper
@@ -7,19 +7,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/**
- * Легковажний фасад для DatabaseHelper.UAtranslate(...):
- *   • виконує запит у фоновому потоці;
- *   • повертає переклад через callback на головному потоці.
- *
- * Використання:
- *     uaTranslator.translate(botWord) { ua ->
- *         // показати ua (або повідомлення, що null)
- *     }
- */
+
 class UATranslate(
     private val context: Context,
-    private val scope: CoroutineScope   // наприклад, lifecycleScope
+    private val scope: CoroutineScope
 ) {
 
     // Один helper на увесь життєвий цикл UATranslate

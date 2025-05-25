@@ -30,7 +30,7 @@ class MyTimer(
                 resetGame.health.decreaseLife()
 
                 if (resetGame.health.isGameOver()) {
-                    textView.text = "Життя закінчились!"
+                    textView.text = "HP закінчились!"
                     resetGame.endGame()
                 } else {
                     textView.text = "Час вийшов!"

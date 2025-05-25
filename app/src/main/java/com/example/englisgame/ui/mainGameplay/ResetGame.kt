@@ -7,8 +7,6 @@ import android.widget.EditText
 import com.example.englisgame.R
 import com.example.englishgame.database.DatabaseHelper
 
-
-
 class ResetGame(
     private val activity: AppCompatActivity,
     private val textTimer: TextView,
@@ -17,7 +15,6 @@ class ResetGame(
     private val textCurrentLetter: TextView
 ) {
     var isGameOver: Boolean = false
-    private var playerUsedWordsCount = 0
     val health = Health(textTimer, healthText, this)
 
     companion object {
@@ -37,14 +34,16 @@ class ResetGame(
         }
     }
 
-    fun incrementPlayerWordCount() {
-        playerUsedWordsCount++
-    }
-
     fun endGame() {
         isGameOver = true
         textTimer.text = "Життя закінчились!"
-        textCurrentLetter.text = "Слів: $playerUsedWordsCount"
+
+        // замість внутрішнього рахунку — беремо з MainGameplay
+        if (activity is MainGameplay) {
+            textCurrentLetter.text = "Слів: ${activity.playerWordCount}"
+        }
+
+
         startGameButton.text = "Спробувати\nзнову"
 
         startGameButton.setOnClickListener {
@@ -54,26 +53,22 @@ class ResetGame(
 
     private fun restartGame() {
         isGameOver = false
-        playerUsedWordsCount = 0
         health.resetLives()
 
         DatabaseHelper(activity).resetUsedFlags()
 
-
         textTimer.text = ""
-        healthText.text = "lives: 3"
+        healthText.text = "HP: 3"
         textCurrentLetter.text = ""
         startGameButton.text = "Почати гру"
 
         if (activity is MainGameplay) {
             activity.resetGameUI()
 
-            // 🔁 Повертаємо первинну дію кнопки
             startGameButton.setOnClickListener {
                 val inputWord = activity.findViewById<EditText>(R.id.editTextGameplay).text.toString().trim()
                 activity.setInputWordAndCheck(inputWord)
             }
         }
     }
-
 }

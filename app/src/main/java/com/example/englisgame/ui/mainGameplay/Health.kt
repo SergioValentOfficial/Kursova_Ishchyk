@@ -26,13 +26,13 @@ class Health(
 
     private fun updateLivesDisplay() {
         textView.text = if (isGameOver()) {
-            "Життя закінчились!"
+            "HP закінчились!"
         } else {
-            "Залишилось життів: $lives"
+            "Залишилось HP: $lives"
         }
 
         // Текстове відображення замість емодзі
-        healthText.text = "lives: $lives"
+        healthText.text = "HP: $lives"
     }
 
     fun resetLives() {

@@ -32,7 +32,8 @@ class MainGameplay : AppCompatActivity() {
     private var myTimer: MyTimer? = null
     private var lastBotWord: String? = null
 
-    private var playerWordCount = 0
+    var playerWordCount = 0
+    var playerUsedWordsCount = 0
 
     private lateinit var uaTranslator: UATranslate
 
@@ -117,11 +118,13 @@ class MainGameplay : AppCompatActivity() {
         when (dbHelper.wordCheck(inputWord)) {
             "used" -> textResult.text = "Це слово вже використовувалось!"
             "ok" -> {
-                playerWordCount++
 
-                if (playerWordCount == 1) {
+                if (playerWordCount == 0) {
                     myTimer = MyTimer(this, textTimer).also { it.start() }
                 }
+
+                playerWordCount++
+
 
                 startGameButton.text = "Відправити\nслово"
                 textResult.text = "Слово прийнято!"

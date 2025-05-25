@@ -25,7 +25,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Menu"
+        android:text="Головне меню"
         android:textColor="#4B0000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -52,9 +52,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="102dp"
-        android:layout_height="31dp"
-        android:text="Nickname:"
+        android:layout_width="226dp"
+        android:layout_height="28dp"
+        android:text="Ім'я користувача:"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/startGameButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +93,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="340dp"
-        android:text="Change Color"
+        android:text="Змінити колір"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/changeTextColor"
         app:layout_constraintTop_toTopOf="parent" />
